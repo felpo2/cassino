@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<div class="app">
+
+    <h1>🎰 Roleta</h1>
+
+    <!-- SALDOS -->
+
+    <div class="saldos">
+
+        <div class="saldo cliente">
+            <span>Saldo do cliente</span>
+
+            <strong>
+                R$ <span id="saldoCliente">1000.00</span>
+            </strong>
+        </div>
+
+        <div class="saldo casa">
+            <span>Saldo da casa</span>
+
+            <strong>
+                R$ <span id="saldoCasa">10000.00</span>
+            </strong>
+        </div>
+
+    </div>
+
+
+    <div class="game">
+
+        <!-- ROLETA -->
+
+        <div class="roleta-area">
+
+            <div class="roleta-container">
+
+                <div class="ponteiro"></div>
+
+                <div
+                    id="roleta"
+                    class="roleta">
+                </div>
+
+                <div class="centro">
+                    🎰
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAINEL -->
+
+        <div class="painel">
+
+            <h2>Faça sua aposta</h2>
+
+            <label for="valor">
+                Valor da aposta
+            </label>
+
+            <input
+                id="valor"
+                type="number"
+                min="1"
+                step="0.01"
+                placeholder="Ex: 50"
+            >
+
+
+            <label>
+                Escolha uma cor
+            </label>
+
+            <div class="cores">
+
+                <button
+                    class="cor vermelho"
+                    data-cor="vermelho">
+                    🔴 Vermelho
+                </button>
+
+                <button
+                    class="cor preto"
+                    data-cor="preto">
+                    ⚫ Preto
+                </button>
+
+                <button
+                    class="cor branco"
+                    data-cor="branco">
+                    ⚪ Branco
+                </button>
+
+            </div>
+
+
+            <div class="multiplicadores">
+
+                <span>🔴 2x</span>
+
+                <span>⚫ 2x</span>
+
+                <span>⚪ 14x</span>
+
+            </div>
+
+
+            <button id="btnGirar">
+                GIRAR ROLETA
+            </button>
+
+
+            <div
+                id="resultado"
+                class="resultado">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
