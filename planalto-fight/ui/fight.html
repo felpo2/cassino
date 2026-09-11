@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Brasil Fight Night
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="fight.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="ambient green"></div>
+<div class="ambient yellow"></div>
+
+
+<main class="casino-shell">
+
+
+    <!-- =========================
+         ARENA
+    ========================== -->
+
+    <section class="arena-card">
+
+
+        <header class="arena-header">
+
+
+            <div>
+
+                <span class="eyebrow">
+                    BRASIL FIGHT NIGHT
+                </span>
+
+
+                <h1>
+                    PLANALTO
+                    <span>
+                        ARENA
+                    </span>
+                </h1>
+
+
+                <p>
+                    Três entram. Um sai com a faixa.
+                </p>
+
+            </div>
+
+
+            <div class="live-badge">
+
+                <span></span>
+
+                AO VIVO*
+
+            </div>
+
+
+        </header>
+
+
+
+        <div class="disclaimer">
+            *Combate fictício e satírico.
+        </div>
+
+
+
+        <!-- =========================
+             TOP HUD
+        ========================== -->
+
+        <div class="fighter-huds">
+
+
+            <div
+                class="fighter-hud bolsonaro"
+                data-fighter="bolsonaro"
+            >
+
+                <div class="fighter-name">
+
+                    <span>
+                        01
+                    </span>
+
+                    <strong>
+                        BOLSONARO
+                    </strong>
+
+                </div>
+
+
+                <div class="health-bar">
+
+                    <div
+                        id="hpBolsonaro"
+                        class="health-fill"
+                    ></div>
+
+                </div>
+
+
+                <small
+                    id="hpTextBolsonaro"
+                >
+                    100 HP
+                </small>
+
+            </div>
+
+
+
+            <div
+                class="fighter-hud lula"
+                data-fighter="lula"
+            >
+
+                <div class="fighter-name">
+
+                    <span>
+                        02
+                    </span>
+
+                    <strong>
+                        LULA
+                    </strong>
+
+                </div>
+
+
+                <div class="health-bar">
+
+                    <div
+                        id="hpLula"
+                        class="health-fill"
+                    ></div>
+
+                </div>
+
+
+                <small
+                    id="hpTextLula"
+                >
+                    100 HP
+                </small>
+
+            </div>
+
+
+
+            <div
+                class="fighter-hud moraes"
+                data-fighter="moraes"
+            >
+
+                <div class="fighter-name">
+
+                    <span>
+                        03
+                    </span>
+
+                    <strong>
+                        MORAES
+                    </strong>
+
+                </div>
+
+
+                <div class="health-bar">
+
+                    <div
+                        id="hpMoraes"
+                        class="health-fill"
+                    ></div>
+
+                </div>
+
+
+                <small
+                    id="hpTextMoraes"
+                >
+                    100 HP
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             RING
+        ========================== -->
+
+        <div class="ring-wrapper">
+
+
+            <div class="audience-lights"></div>
+
+
+            <div class="ring">
+
+
+                <div class="rope rope-one"></div>
+                <div class="rope rope-two"></div>
+                <div class="rope rope-three"></div>
+
+
+                <div class="ring-floor">
+
+
+                    <div class="brasil-star">
+                        ★
+                    </div>
+
+
+                    <div
+                        id="fighterBolsonaro"
+                        class="fighter fighter-bolsonaro"
+                    >
+
+                        <div class="fighter-avatar">
+
+                            <div class="avatar-head"></div>
+
+                            <div class="avatar-body"></div>
+
+                        </div>
+
+
+                        <strong>
+                            B
+                        </strong>
+
+                    </div>
+
+
+
+                    <div
+                        id="fighterLula"
+                        class="fighter fighter-lula"
+                    >
+
+                        <div class="fighter-avatar">
+
+                            <div class="avatar-head"></div>
+
+                            <div class="avatar-body"></div>
+
+                        </div>
+
+
+                        <strong>
+                            L
+                        </strong>
+
+                    </div>
+
+
+
+                    <div
+                        id="fighterMoraes"
+                        class="fighter fighter-moraes"
+                    >
+
+                        <div class="fighter-avatar">
+
+                            <div class="avatar-head"></div>
+
+                            <div class="avatar-body"></div>
+
+                        </div>
+
+
+                        <strong>
+                            M
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             ANNOUNCER
+        ========================== -->
+
+        <div class="announcer">
+
+
+            <span>
+                ARENA FEED
+            </span>
+
+
+            <strong
+                id="announcerText"
+            >
+                Aguardando apostas...
+            </strong>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         BET PANEL
+    ========================== -->
+
+    <section class="bet-card">
+
+
+        <div class="balance">
+
+
+            <div>
+
+                <span>
+                    SALDO DISPONÍVEL
+                </span>
+
+
+                <strong>
+
+                    R$
+
+                    <span id="balance">
+                        1000.00
+                    </span>
+
+                </strong>
+
+            </div>
+
+
+            <div class="money-badge">
+                $
+            </div>
+
+
+        </div>
+
+
+
+        <div class="section-label">
+            VALOR DA APOSTA
+        </div>
+
+
+        <div class="amount-control">
+
+
+            <span>
+                R$
+            </span>
+
+
+            <input
+                id="betAmount"
+                type="number"
+                value="50"
+                min="1"
+            >
+
+
+            <button
+                id="halfButton"
+                type="button"
+            >
+                ½
+            </button>
+
+
+            <button
+                id="doubleButton"
+                type="button"
+            >
+                2×
+            </button>
+
+
+        </div>
+
+
+
+        <div class="quick-values">
+
+
+            <button data-value="10">
+                10
+            </button>
+
+            <button data-value="25">
+                25
+            </button>
+
+            <button data-value="50">
+                50
+            </button>
+
+            <button data-value="100">
+                100
+            </button>
+
+
+        </div>
+
+
+
+        <div class="section-label">
+            QUEM LEVA A FAIXA?
+        </div>
+
+
+
+        <div class="fighter-options">
+
+
+            <button
+                class="fighter-option bolsonaro"
+                data-fighter="bolsonaro"
+            >
+
+                <div class="fighter-color"></div>
+
+
+                <div>
+
+                    <strong>
+                        BOLSONARO
+                    </strong>
+
+                    <span>
+                        2.70×
+                    </span>
+
+                </div>
+
+
+                <small>
+                    01
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="fighter-option lula"
+                data-fighter="lula"
+            >
+
+                <div class="fighter-color"></div>
+
+
+                <div>
+
+                    <strong>
+                        LULA
+                    </strong>
+
+                    <span>
+                        2.70×
+                    </span>
+
+                </div>
+
+
+                <small>
+                    02
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="fighter-option moraes"
+                data-fighter="moraes"
+            >
+
+                <div class="fighter-color"></div>
+
+
+                <div>
+
+                    <strong>
+                        MORAES
+                    </strong>
+
+                    <span>
+                        2.70×
+                    </span>
+
+                </div>
+
+
+                <small>
+                    03
+                </small>
+
+            </button>
+
+
+        </div>
+
+
+
+        <button
+            id="fightButton"
+            class="fight-button"
+            type="button"
+        >
+
+            <div>
+
+                <small>
+                    MAIN EVENT
+                </small>
+
+                <strong
+                    id="fightButtonText"
+                >
+                    INICIAR COMBATE
+                </strong>
+
+            </div>
+
+
+            <span>
+                →
+            </span>
+
+
+        </button>
+
+
+
+        <div
+            id="result"
+            class="result"
+        >
+
+            Escolha seu competidor.
+
+        </div>
+
+
+
+        <div class="match-info">
+
+
+            <div>
+
+                <span>
+                    COMPETIDORES
+                </span>
+
+                <strong>
+                    3
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    FORMATO
+                </span>
+
+                <strong>
+                    FFA
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ARENA
+                </span>
+
+                <strong>
+                    BRA
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     WIN SCREEN
+========================== -->
+
+<div
+    id="winnerOverlay"
+    class="winner-overlay"
+>
+
+
+    <div class="winner-card">
+
+
+        <span>
+            VENCEDOR
+        </span>
+
+
+        <strong
+            id="winnerName"
+        >
+            —
+        </strong>
+
+
+        <small
+            id="winnerReward"
+        >
+            —
+        </small>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script src="fight.js"></script>
+
+
+</body>
+
+</html>

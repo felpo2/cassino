@@ -1,0 +1,2552 @@
+:root {
+
+    --bg:
+        #07090c;
+
+    --panel:
+        #11151b;
+
+    --panel-2:
+        #181d24;
+
+    --border:
+        rgba(255,255,255,.07);
+
+    --text:
+        #f5f5f3;
+
+    --muted:
+        #707987;
+
+    /*
+       Brasil / capacete / automobilismo
+    */
+
+    --senna-yellow:
+        #ffd600;
+
+    --senna-yellow-dark:
+        #e4b900;
+
+    --brazil-green:
+        #00a859;
+
+    --brazil-blue:
+        #0866cc;
+
+    --race-red:
+        #df252f;
+
+    --race-black:
+        #101216;
+
+    --race-white:
+        #f4f2e9;
+
+}
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing:
+        border-box;
+
+}
+
+
+body {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    overflow-x:
+        hidden;
+
+    color:
+        var(--text);
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255,214,0,.08),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 90%,
+            rgba(0,168,89,.07),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            #080a0d,
+            #030405
+        );
+
+}
+
+
+
+/* ==========================================
+   AMBIENT
+========================================== */
+
+.ambient {
+
+    position:
+        fixed;
+
+    width:
+        620px;
+
+    height:
+        620px;
+
+    border-radius:
+        50%;
+
+    filter:
+        blur(150px);
+
+    opacity:
+        .06;
+
+    pointer-events:
+        none;
+
+}
+
+
+.ambient-yellow {
+
+    background:
+        var(--senna-yellow);
+
+    top:
+        -350px;
+
+    left:
+        -300px;
+
+}
+
+
+.ambient-green {
+
+    background:
+        var(--brazil-green);
+
+    bottom:
+        -350px;
+
+    right:
+        -300px;
+
+}
+
+
+
+/* ==========================================
+   SHELL
+========================================== */
+
+.senna-casino {
+
+    width:
+        min(
+            1220px,
+            95vw
+        );
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.3fr
+        .7fr;
+
+    gap:
+        20px;
+
+    padding:
+        22px;
+
+}
+
+
+
+/* ==========================================
+   PANELS
+========================================== */
+
+.roulette-panel,
+.bet-panel {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        22px;
+
+    background:
+
+        linear-gradient(
+            160deg,
+            rgba(22,27,34,.96),
+            rgba(8,10,14,.98)
+        );
+
+    box-shadow:
+        0 35px 90px
+        rgba(0,0,0,.5);
+
+}
+
+
+
+/* ==========================================
+   LEFT PANEL
+========================================== */
+
+.roulette-panel {
+
+    min-height:
+        700px;
+
+    padding:
+        30px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.roulette-panel::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        -80px;
+
+    top:
+        50%;
+
+    width:
+        300px;
+
+    height:
+        18px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--brazil-green),
+            var(--senna-yellow),
+            var(--brazil-blue),
+            transparent
+        );
+
+    opacity:
+        .11;
+
+    transform:
+        rotate(-52deg);
+
+}
+
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.game-header {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+}
+
+
+.eyebrow {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        7px;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    color:
+        #8f98a5;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.flag-line {
+
+    width:
+        33px;
+
+    height:
+        3px;
+
+    border-radius:
+        4px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--brazil-green)
+            0 33%,
+
+            var(--senna-yellow)
+            33% 66%,
+
+            var(--brazil-blue)
+            66%
+        );
+
+}
+
+
+.game-header h1 {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        46px;
+
+    font-weight:
+        700;
+
+    font-style:
+        italic;
+
+    line-height:
+        .9;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.game-header h1 span {
+
+    color:
+        var(--senna-yellow);
+
+}
+
+
+.game-header p {
+
+    margin-top:
+        12px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+}
+
+
+.live-status {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        8px 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.03);
+
+    color:
+        #979faa;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.live-dot {
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--brazil-green);
+
+    box-shadow:
+        0 0 12px
+        var(--brazil-green);
+
+}
+
+
+
+/* ==========================================
+   TELEMETRY
+========================================== */
+
+.telemetry {
+
+    margin-top:
+        22px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid
+        var(--border);
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+.telemetry-item {
+
+    padding:
+        10px 15px;
+
+    display:
+        flex;
+
+    align-items:
+        baseline;
+
+    gap:
+        7px;
+
+}
+
+
+.telemetry-item
++
+.telemetry-item {
+
+    border-left:
+        1px solid
+        var(--border);
+
+}
+
+
+.telemetry-item span {
+
+    color:
+        #606977;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.telemetry-item strong {
+
+    color:
+        #d9dce0;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        17px;
+
+}
+
+
+.telemetry-item small {
+
+    color:
+        #606977;
+
+    font-size:
+        7px;
+
+}
+
+
+
+/* ==========================================
+   STAGE
+========================================== */
+
+.roulette-stage {
+
+    position:
+        relative;
+
+    flex:
+        1;
+
+    min-height:
+        480px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+
+/* ==========================================
+   SPEED LINES
+========================================== */
+
+.speed-lines {
+
+    position:
+        absolute;
+
+    width:
+        510px;
+
+    height:
+        510px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        repeating-conic-gradient(
+
+            from 0deg,
+
+            rgba(
+                255,
+                214,
+                0,
+                .09
+            )
+            0deg 1deg,
+
+            transparent
+            1deg 7deg
+
+        );
+
+    mask-image:
+
+        radial-gradient(
+            circle,
+            transparent 58%,
+            black 60%,
+            black 63%,
+            transparent 65%
+        );
+
+}
+
+
+
+/* ==========================================
+   POINTER
+========================================== */
+
+.pointer-housing {
+
+    position:
+        absolute;
+
+    z-index:
+        15;
+
+    top:
+        15px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+}
+
+
+.pointer-line {
+
+    width:
+        3px;
+
+    height:
+        23px;
+
+    background:
+        var(--senna-yellow);
+
+    box-shadow:
+        0 0 12px
+        rgba(255,214,0,.55);
+
+}
+
+
+.pointer {
+
+    width:
+        0;
+
+    height:
+        0;
+
+    border-left:
+        14px solid transparent;
+
+    border-right:
+        14px solid transparent;
+
+    border-top:
+        26px solid
+        var(--senna-yellow);
+
+}
+
+
+
+/* ==========================================
+   SHADOW
+========================================== */
+
+.wheel-shadow {
+
+    position:
+        absolute;
+
+    bottom:
+        38px;
+
+    width:
+        370px;
+
+    height:
+        70px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0,0,0,.75);
+
+    filter:
+        blur(30px);
+
+}
+
+
+
+/* ==========================================
+   ROULETTE WHEEL
+========================================== */
+
+.roulette-wheel {
+
+    position:
+        relative;
+
+    width:
+        410px;
+
+    height:
+        410px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        conic-gradient(
+
+            var(--race-red)
+            0deg 18deg,
+
+            var(--race-black)
+            18deg 36deg,
+
+            var(--race-red)
+            36deg 54deg,
+
+            var(--race-black)
+            54deg 72deg,
+
+            var(--race-red)
+            72deg 90deg,
+
+            var(--race-black)
+            90deg 108deg,
+
+            var(--race-red)
+            108deg 126deg,
+
+            var(--race-black)
+            126deg 144deg,
+
+            var(--race-red)
+            144deg 162deg,
+
+            var(--race-black)
+            162deg 180deg,
+
+            var(--race-red)
+            180deg 198deg,
+
+            var(--race-black)
+            198deg 216deg,
+
+            var(--race-red)
+            216deg 234deg,
+
+            var(--race-black)
+            234deg 252deg,
+
+            var(--race-red)
+            252deg 270deg,
+
+            var(--race-black)
+            270deg 288deg,
+
+            var(--race-red)
+            288deg 306deg,
+
+            var(--race-black)
+            306deg 324deg,
+
+            var(--race-red)
+            324deg 342deg,
+
+            var(--race-white)
+            342deg 360deg
+
+        );
+
+    border:
+        15px solid
+        #171b20;
+
+    box-shadow:
+
+        0 0 0 3px
+        rgba(255,255,255,.04),
+
+        0 0 0 7px
+        #252a31,
+
+        0 0 0 9px
+        rgba(255,214,0,.25),
+
+        0 24px 65px
+        rgba(0,0,0,.65);
+
+    transition:
+
+        transform
+        5.6s
+        cubic-bezier(
+            .08,
+            .68,
+            .08,
+            1
+        );
+
+    will-change:
+        transform;
+
+}
+
+
+.roulette-wheel::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        22px;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+}
+
+
+.roulette-wheel::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        88px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #1a1f26,
+            #080a0d 75%
+        );
+
+    border:
+        3px solid
+        #222830;
+
+}
+
+
+
+/* ==========================================
+   BRAZIL STRIPES
+========================================== */
+
+.helmet-stripe {
+
+    position:
+        absolute;
+
+    z-index:
+        3;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        30px;
+
+}
+
+
+.stripe-green {
+
+    top:
+        81px;
+
+    width:
+        145px;
+
+    height:
+        8px;
+
+    background:
+        var(--brazil-green);
+
+}
+
+
+.stripe-blue {
+
+    top:
+        92px;
+
+    width:
+        118px;
+
+    height:
+        6px;
+
+    background:
+        var(--brazil-blue);
+
+}
+
+
+
+/* ==========================================
+   CENTER
+========================================== */
+
+.wheel-inner-ring {
+
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    inset:
+        128px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        50%;
+
+    border:
+        3px solid
+        var(--senna-yellow);
+
+    background:
+        #0b0e12;
+
+    box-shadow:
+
+        0 0 0 7px
+        rgba(255,214,0,.05),
+
+        0 0 30px
+        rgba(0,0,0,.8);
+
+}
+
+
+.wheel-center {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+}
+
+
+.center-top,
+.center-bottom {
+
+    color:
+        #858d98;
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.wheel-center strong {
+
+    color:
+        var(--senna-yellow);
+
+    font-size:
+        42px;
+
+    font-weight:
+        700;
+
+    font-style:
+        italic;
+
+    line-height:
+        .95;
+
+}
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.race-footer {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
+    align-items:
+        center;
+
+    gap:
+        20px;
+
+    padding-top:
+        15px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+}
+
+
+.race-footer > div:first-child {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+}
+
+
+.race-footer span {
+
+    color:
+        #69727f;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.race-footer strong {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        15px;
+
+}
+
+
+.lap-progress {
+
+    display:
+        flex;
+
+    gap:
+        4px;
+
+}
+
+
+.lap-progress span {
+
+    flex:
+        1;
+
+    height:
+        3px;
+
+    background:
+        #262c34;
+
+}
+
+
+.lap-progress span:nth-child(-n+2) {
+
+    background:
+        var(--brazil-green);
+
+}
+
+
+.lap-progress span:nth-child(3),
+.lap-progress span:nth-child(4) {
+
+    background:
+        var(--senna-yellow);
+
+}
+
+
+.lap-progress span:nth-child(5) {
+
+    background:
+        var(--brazil-blue);
+
+}
+
+
+.finish-label {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        #818996;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+}
+
+
+.checker {
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    background:
+
+        conic-gradient(
+
+            #fff 0 25%,
+            #111 0 50%,
+            #fff 0 75%,
+            #111 0
+
+        );
+
+    background-size:
+        10px 10px;
+
+}
+
+
+
+/* ==========================================
+   BET PANEL
+========================================== */
+
+.bet-panel {
+
+    padding:
+        27px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        20px;
+
+}
+
+
+.bet-panel::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    right:
+        0;
+
+    width:
+        5px;
+
+    height:
+        100%;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            var(--brazil-green),
+
+            var(--senna-yellow),
+
+            var(--brazil-blue)
+
+        );
+
+}
+
+
+.cockpit-label {
+
+    color:
+        #69717d;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+
+/* ==========================================
+   BALANCE
+========================================== */
+
+.balance-box {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding-bottom:
+        19px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+.balance-box > div:first-child {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+}
+
+
+.balance-box span {
+
+    color:
+        #747d89;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.balance-box strong {
+
+    font-size:
+        27px;
+
+    letter-spacing:
+        -1px;
+
+}
+
+
+.br-badge {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    position:
+        relative;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        50%;
+
+    border:
+        2px solid
+        var(--senna-yellow);
+
+    background:
+        #0d1116;
+
+    color:
+        white;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-weight:
+        700;
+
+}
+
+
+.br-badge span {
+
+    position:
+        absolute;
+
+    width:
+        60px;
+
+    height:
+        7px;
+
+    background:
+        var(--brazil-green);
+
+    transform:
+        rotate(-35deg);
+
+}
+
+
+
+/* ==========================================
+   SECTION
+========================================== */
+
+.section-title {
+
+    color:
+        #818a96;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+
+/* ==========================================
+   INPUT
+========================================== */
+
+.bet-input {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        42px
+        42px;
+
+    gap:
+        7px;
+
+    align-items:
+        center;
+
+    padding:
+        7px
+        8px
+        7px
+        14px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        10px;
+
+    background:
+        #0e1217;
+
+}
+
+
+.bet-input > span {
+
+    color:
+        #7b8490;
+
+}
+
+
+.bet-input input {
+
+    width:
+        100%;
+
+    border:
+        none;
+
+    outline:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    font-size:
+        20px;
+
+    font-weight:
+        700;
+
+}
+
+
+.bet-input button {
+
+    height:
+        38px;
+
+    border:
+        none;
+
+    border-radius:
+        7px;
+
+    background:
+        #1e242c;
+
+    color:
+        #aeb5bd;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+}
+
+
+
+/* ==========================================
+   QUICK
+========================================== */
+
+.quick-values {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        6px;
+
+}
+
+
+.quick-values button {
+
+    padding:
+        9px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        7px;
+
+    background:
+        #141920;
+
+    color:
+        #858e99;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+}
+
+
+.quick-values button:hover {
+
+    color:
+        white;
+
+    border-color:
+        rgba(255,214,0,.25);
+
+}
+
+
+
+/* ==========================================
+   OPTIONS
+========================================== */
+
+.bet-options {
+
+    display:
+        grid;
+
+    gap:
+        8px;
+
+}
+
+
+.bet-option {
+
+    min-height:
+        61px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        10px 13px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        10px;
+
+    background:
+        #11161d;
+
+    color:
+        white;
+
+    cursor:
+        pointer;
+
+    text-align:
+        left;
+
+    transition:
+        transform .14s ease,
+        border-color .14s ease,
+        background .14s ease;
+
+}
+
+
+.bet-option:hover {
+
+    transform:
+        translateX(3px);
+
+}
+
+
+.bet-option.selected {
+
+    border-color:
+        rgba(255,214,0,.6);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(255,214,0,.08),
+            transparent
+        );
+
+}
+
+
+.option-number {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        6px;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+}
+
+
+.bet-option.red
+.option-number {
+
+    background:
+        var(--race-red);
+
+}
+
+
+.bet-option.black
+.option-number {
+
+    background:
+        #050607;
+
+    border:
+        1px solid
+        #383e46;
+
+}
+
+
+.bet-option.white
+.option-number {
+
+    background:
+        var(--race-white);
+
+    color:
+        #111;
+
+}
+
+
+.bet-option div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        2px;
+
+}
+
+
+.bet-option strong {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        .7px;
+
+}
+
+
+.bet-option small {
+
+    color:
+        #747d89;
+
+    font-size:
+        9px;
+
+}
+
+
+
+/* ==========================================
+   RACE BUTTON
+========================================== */
+
+.race-button {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        64px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        11px 16px;
+
+    overflow:
+        hidden;
+
+    border:
+        none;
+
+    border-radius:
+        10px;
+
+    background:
+
+        linear-gradient(
+            110deg,
+            var(--senna-yellow),
+            #f3bb00
+        );
+
+    color:
+        #111;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 13px 25px
+        rgba(255,214,0,.12);
+
+}
+
+
+.race-button::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        -90px;
+
+    top:
+        0;
+
+    width:
+        70px;
+
+    height:
+        100%;
+
+    background:
+        rgba(255,255,255,.3);
+
+    transform:
+        skewX(-30deg);
+
+}
+
+
+.race-button:hover::before {
+
+    animation:
+        raceShine
+        .55s ease;
+
+}
+
+
+@keyframes raceShine {
+
+    from {
+
+        left:
+            -90px;
+
+    }
+
+    to {
+
+        left:
+            115%;
+
+    }
+
+}
+
+
+.race-button-left {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+}
+
+
+.race-button small {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.race-button strong {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        20px;
+
+    font-style:
+        italic;
+
+}
+
+
+.race-arrow {
+
+    font-size:
+        24px;
+
+    font-weight:
+        800;
+
+}
+
+
+.race-button:disabled {
+
+    opacity:
+        .5;
+
+    cursor:
+        not-allowed;
+
+}
+
+
+
+/* ==========================================
+   RESULT
+========================================== */
+
+.result {
+
+    min-height:
+        31px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        #747e8b;
+
+    font-size:
+        10px;
+
+    text-align:
+        center;
+
+}
+
+
+.result.win {
+
+    color:
+        #42e88c;
+
+}
+
+
+.result.loss {
+
+    color:
+        #ff6370;
+
+}
+
+
+
+/* ==========================================
+   INFO
+========================================== */
+
+.race-info {
+
+    margin-top:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        10px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.race-info div {
+
+    padding:
+        12px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+}
+
+
+.race-info div
++
+div {
+
+    border-left:
+        1px solid
+        var(--border);
+
+}
+
+
+.race-info span {
+
+    color:
+        #6c7581;
+
+    font-size:
+        8px;
+
+}
+
+
+.race-info strong {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        12px;
+
+}
+
+
+
+/* ==========================================
+   SPINNING EFFECT
+========================================== */
+
+.roulette-panel.racing
+.speed-lines {
+
+    animation:
+        speedRotation
+        .5s linear infinite;
+
+}
+
+
+@keyframes speedRotation {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+.roulette-panel.racing
+.telemetry {
+
+    border-color:
+        rgba(255,214,0,.14);
+
+}
+
+
+
+/* ==========================================
+   WIN OVERLAY
+========================================== */
+
+.win-overlay {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        100;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,214,0,.13),
+            transparent 44%
+        );
+
+}
+
+
+.win-overlay.active {
+
+    animation:
+        winAnimation
+        1.8s ease;
+
+}
+
+
+.win-stripes {
+
+    position:
+        absolute;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        7px;
+
+    width:
+        100%;
+
+    transform:
+        rotate(-10deg);
+
+}
+
+
+.win-stripes span {
+
+    display:
+        block;
+
+    height:
+        7px;
+
+}
+
+
+.win-stripes span:nth-child(1) {
+
+    background:
+        var(--brazil-green);
+
+}
+
+
+.win-stripes span:nth-child(2) {
+
+    background:
+        var(--senna-yellow);
+
+}
+
+
+.win-stripes span:nth-child(3) {
+
+    background:
+        var(--brazil-blue);
+
+}
+
+
+.win-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    padding:
+        30px 55px;
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(6,8,10,.88);
+
+    border:
+        1px solid
+        rgba(255,214,0,.25);
+
+}
+
+
+.win-content span {
+
+    color:
+        var(--senna-yellow);
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        3px;
+
+}
+
+
+.win-content strong {
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        58px;
+
+    font-style:
+        italic;
+
+}
+
+
+.win-content small {
+
+    color:
+        #999faa;
+
+    font-family:
+        "Rajdhani",
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+@keyframes winAnimation {
+
+    0% {
+
+        opacity:
+            0;
+
+    }
+
+    15% {
+
+        opacity:
+            1;
+
+    }
+
+    75% {
+
+        opacity:
+            1;
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (
+    max-width: 950px
+) {
+
+    .senna-casino {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (
+    max-width: 560px
+) {
+
+    .senna-casino {
+
+        width:
+            100%;
+
+        padding:
+            10px;
+
+    }
+
+
+    .roulette-panel,
+    .bet-panel {
+
+        padding:
+            20px;
+
+        border-radius:
+            16px;
+
+    }
+
+
+    .roulette-wheel {
+
+        width:
+            310px;
+
+        height:
+            310px;
+
+    }
+
+
+    .roulette-stage {
+
+        min-height:
+            380px;
+
+    }
+
+
+    .wheel-inner-ring {
+
+        inset:
+            96px;
+
+    }
+
+
+    .stripe-green {
+
+        top:
+            61px;
+
+        width:
+            105px;
+
+    }
+
+
+    .stripe-blue {
+
+        top:
+            72px;
+
+        width:
+            90px;
+
+    }
+
+
+    .speed-lines {
+
+        width:
+            380px;
+
+        height:
+            380px;
+
+    }
+
+
+    .telemetry-item {
+
+        padding:
+            8px;
+
+    }
+
+}

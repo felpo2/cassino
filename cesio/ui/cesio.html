@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Onde Está o Césio?
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="cesio.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="background-grid"></div>
+
+<div class="ambient-glow"></div>
+
+
+<main class="game-shell">
+
+
+    <!-- ==================================
+         GAME
+    =================================== -->
+
+    <section class="game-panel">
+
+
+        <header class="game-header">
+
+
+            <div>
+
+                <div class="eyebrow">
+
+                    <span></span>
+
+                    GOIÂNIA // 1987
+
+                </div>
+
+
+                <h1>
+
+                    ONDE ESTÁ
+                    <strong>O CÉSIO?</strong>
+
+                </h1>
+
+
+                <p>
+                    Seis pessoas. Uma fonte. Uma escolha.
+                </p>
+
+            </div>
+
+
+            <div class="radiation-status">
+
+                <div class="radiation-symbol">
+                    ☢
+                </div>
+
+                <div>
+
+                    <span>
+                        NÍVEL
+                    </span>
+
+                    <strong
+                        id="radiationLevel"
+                    >
+                        ESTÁVEL
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+
+        <div class="disclaimer">
+
+            Experiência ficcional e satírica inspirada no acidente radiológico de Goiânia.
+            Nenhuma vítima real é representada.
+
+        </div>
+
+
+
+        <!-- ==================================
+             DETECTOR
+        =================================== -->
+
+        <div class="detector-panel">
+
+
+            <div class="detector-left">
+
+                <span>
+                    DETECTOR
+                </span>
+
+                <strong
+                    id="detectorValue"
+                >
+                    0.00
+                </strong>
+
+                <small>
+                    μSv/h
+                </small>
+
+            </div>
+
+
+            <div class="detector-bars">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <div
+                id="scanStatus"
+                class="scan-status"
+            >
+                AGUARDANDO
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================
+             PEOPLE
+        =================================== -->
+
+        <div
+            id="peopleGrid"
+            class="people-grid"
+        >
+
+
+            <button
+                class="person-card"
+                data-person="0"
+            >
+
+                <div class="scan-line"></div>
+
+                <div class="person-number">
+                    01
+                </div>
+
+                <div class="person-avatar">
+
+                    <div class="head"></div>
+
+                    <div class="body"></div>
+
+                </div>
+
+                <strong>
+                    PESSOA 01
+                </strong>
+
+                <span>
+                    DESCONHECIDO
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="person-card"
+                data-person="1"
+            >
+
+                <div class="scan-line"></div>
+
+                <div class="person-number">
+                    02
+                </div>
+
+                <div class="person-avatar">
+
+                    <div class="head"></div>
+
+                    <div class="body"></div>
+
+                </div>
+
+                <strong>
+                    PESSOA 02
+                </strong>
+
+                <span>
+                    DESCONHECIDO
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="person-card"
+                data-person="2"
+            >
+
+                <div class="scan-line"></div>
+
+                <div class="person-number">
+                    03
+                </div>
+
+                <div class="person-avatar">
+
+                    <div class="head"></div>
+
+                    <div class="body"></div>
+
+                </div>
+
+                <strong>
+                    PESSOA 03
+                </strong>
+
+                <span>
+                    DESCONHECIDO
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="person-card"
+                data-person="3"
+            >
+
+                <div class="scan-line"></div>
+
+                <div class="person-number">
+                    04
+                </div>
+
+                <div class="person-avatar">
+
+                    <div class="head"></div>
+
+                    <div class="body"></div>
+
+                </div>
+
+                <strong>
+                    PESSOA 04
+                </strong>
+
+                <span>
+                    DESCONHECIDO
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="person-card"
+                data-person="4"
+            >
+
+                <div class="scan-line"></div>
+
+                <div class="person-number">
+                    05
+                </div>
+
+                <div class="person-avatar">
+
+                    <div class="head"></div>
+
+                    <div class="body"></div>
+
+                </div>
+
+                <strong>
+                    PESSOA 05
+                </strong>
+
+                <span>
+                    DESCONHECIDO
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="person-card"
+                data-person="5"
+            >
+
+                <div class="scan-line"></div>
+
+                <div class="person-number">
+                    06
+                </div>
+
+                <div class="person-avatar">
+
+                    <div class="head"></div>
+
+                    <div class="body"></div>
+
+                </div>
+
+                <strong>
+                    PESSOA 06
+                </strong>
+
+                <span>
+                    DESCONHECIDO
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ==================================
+             MESSAGE
+        =================================== -->
+
+        <div class="message-panel">
+
+            <span>
+                CENTRAL DE MONITORAMENTO
+            </span>
+
+            <strong
+                id="gameMessage"
+            >
+                Selecione um suspeito.
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================
+         CONTROL
+    =================================== -->
+
+    <section class="control-panel">
+
+
+        <div class="control-title">
+            OPERAÇÃO AZUL
+        </div>
+
+
+
+        <div class="balance">
+
+            <div>
+
+                <span>
+                    CRÉDITOS
+                </span>
+
+                <strong>
+
+                    R$
+
+                    <span id="balance">
+                        1000.00
+                    </span>
+
+                </strong>
+
+            </div>
+
+
+            <div class="radiation-icon">
+                ☢
+            </div>
+
+
+        </div>
+
+
+
+        <div class="section-label">
+            VALOR DA APOSTA
+        </div>
+
+
+        <div class="bet-control">
+
+            <span>
+                R$
+            </span>
+
+            <input
+                id="betAmount"
+                type="number"
+                value="50"
+                min="1"
+            >
+
+            <button
+                id="halfButton"
+                type="button"
+            >
+                ½
+            </button>
+
+            <button
+                id="doubleButton"
+                type="button"
+            >
+                2×
+            </button>
+
+        </div>
+
+
+
+        <div class="quick-values">
+
+            <button data-value="10">
+                10
+            </button>
+
+            <button data-value="25">
+                25
+            </button>
+
+            <button data-value="50">
+                50
+            </button>
+
+            <button data-value="100">
+                100
+            </button>
+
+        </div>
+
+
+
+        <div class="selection-display">
+
+            <span>
+                SUSPEITO SELECIONADO
+            </span>
+
+            <strong
+                id="selectedPerson"
+            >
+                —
+            </strong>
+
+        </div>
+
+
+
+        <button
+            id="scanButton"
+            class="scan-button"
+            type="button"
+        >
+
+            <div>
+
+                <small>
+                    INICIAR VARREDURA
+                </small>
+
+                <strong
+                    id="scanButtonText"
+                >
+                    LOCALIZAR FONTE
+                </strong>
+
+            </div>
+
+
+            <span>
+                ☢
+            </span>
+
+
+        </button>
+
+
+
+        <div
+            id="result"
+            class="result"
+        >
+            Escolha uma das seis pessoas.
+        </div>
+
+
+
+        <div class="game-info">
+
+
+            <div>
+
+                <span>
+                    PESSOAS
+                </span>
+
+                <strong>
+                    6
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    FONTE
+                </span>
+
+                <strong>
+                    1
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    PRÊMIO
+                </span>
+
+                <strong>
+                    5.4×
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==================================
+     REVEAL
+=================================== -->
+
+<div
+    id="revealOverlay"
+    class="reveal-overlay"
+>
+
+    <div class="reveal-box">
+
+        <span
+            id="revealLabel"
+        >
+            FONTE LOCALIZADA
+        </span>
+
+        <strong
+            id="revealPerson"
+        >
+            PESSOA 03
+        </strong>
+
+        <small
+            id="revealReward"
+        >
+            MATERIAL ISOLADO
+        </small>
+
+    </div>
+
+</div>
+
+
+<script src="cesio.js"></script>
+
+</body>
+
+</html>

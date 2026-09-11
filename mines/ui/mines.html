@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mines</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="mines.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+
+
+<main class="casino-shell">
+
+
+    <!-- GAME -->
+
+    <section class="game-card">
+
+
+        <header class="game-header">
+
+            <div>
+
+                <span class="game-tag">
+                    CASINO GAME
+                </span>
+
+                <h1>
+                    Mines
+                </h1>
+
+                <p>
+                    Encontre os diamantes antes das bombas.
+                </p>
+
+            </div>
+
+
+            <div class="status">
+
+                <span
+                    class="status-dot"
+                ></span>
+
+                Online
+
+            </div>
+
+        </header>
+
+
+        <div
+            id="mineBoard"
+            class="mine-board"
+        ></div>
+
+
+        <div class="round-stats">
+
+            <div>
+
+                <span>
+                    Multiplicador
+                </span>
+
+                <strong
+                    id="multiplier"
+                >
+                    1.00×
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Valor atual
+                </span>
+
+                <strong
+                    id="currentValue"
+                >
+                    R$ 0.00
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Casas seguras
+                </span>
+
+                <strong
+                    id="safeCount"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- CONTROL -->
+
+    <section class="control-card">
+
+
+        <div class="balance">
+
+            <div>
+
+                <span>
+                    Saldo disponível
+                </span>
+
+                <strong>
+                    R$
+                    <span id="balance">
+                        1000.00
+                    </span>
+                </strong>
+
+            </div>
+
+
+            <div class="wallet-icon">
+                $
+            </div>
+
+        </div>
+
+
+
+        <div class="section-label">
+            Valor da aposta
+        </div>
+
+
+        <div class="amount-control">
+
+            <span>
+                R$
+            </span>
+
+            <input
+                id="betAmount"
+                type="number"
+                value="10"
+                min="1"
+            >
+
+            <button
+                id="halfButton"
+                class="small-action"
+            >
+                ½
+            </button>
+
+            <button
+                id="doubleButton"
+                class="small-action"
+            >
+                2×
+            </button>
+
+        </div>
+
+
+
+        <div class="quick-values">
+
+            <button data-value="10">
+                R$ 10
+            </button>
+
+            <button data-value="25">
+                R$ 25
+            </button>
+
+            <button data-value="50">
+                R$ 50
+            </button>
+
+            <button data-value="100">
+                R$ 100
+            </button>
+
+        </div>
+
+
+
+        <div class="section-label">
+            Dificuldade
+        </div>
+
+
+        <div class="difficulty-grid">
+
+            <button
+                class="difficulty selected"
+                data-difficulty="easy"
+                data-mines="3"
+            >
+                <span>Fácil</span>
+                <strong>3 bombas</strong>
+            </button>
+
+
+            <button
+                class="difficulty"
+                data-difficulty="normal"
+                data-mines="5"
+            >
+                <span>Normal</span>
+                <strong>5 bombas</strong>
+            </button>
+
+
+            <button
+                class="difficulty"
+                data-difficulty="medium"
+                data-mines="8"
+            >
+                <span>Médio</span>
+                <strong>8 bombas</strong>
+            </button>
+
+
+            <button
+                class="difficulty"
+                data-difficulty="hard"
+                data-mines="12"
+            >
+                <span>Difícil</span>
+                <strong>12 bombas</strong>
+            </button>
+
+
+            <button
+                class="difficulty"
+                data-difficulty="extreme"
+                data-mines="18"
+            >
+                <span>Extremo</span>
+                <strong>18 bombas</strong>
+            </button>
+
+
+            <button
+                class="difficulty insane"
+                data-difficulty="insane"
+                data-mines="24"
+            >
+                <span>Insano</span>
+                <strong>24 bombas</strong>
+            </button>
+
+        </div>
+
+
+
+        <button
+            id="startButton"
+            class="primary-button"
+        >
+
+            <span id="mainButtonText">
+                Iniciar partida
+            </span>
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+
+        <button
+            id="cashoutButton"
+            class="cashout-button"
+            disabled
+        >
+            Retirar prêmio
+        </button>
+
+
+        <div
+            id="result"
+            class="result-message"
+        >
+            Escolha a dificuldade e inicie.
+        </div>
+
+
+        <div class="risk-info">
+
+            <div>
+                <span>Bombas</span>
+                <strong id="mineCount">
+                    3
+                </strong>
+            </div>
+
+            <div>
+                <span>Casas</span>
+                <strong>
+                    25
+                </strong>
+            </div>
+
+            <div>
+                <span>Seguras</span>
+                <strong id="safeTiles">
+                    22
+                </strong>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<div
+    id="winOverlay"
+    class="win-overlay"
+>
+
+    <div class="win-content">
+
+        <span>
+            PRÊMIO RETIRADO
+        </span>
+
+        <strong id="winMultiplier">
+            2.40×
+        </strong>
+
+        <small id="winAmount">
+            + R$ 24.00
+        </small>
+
+    </div>
+
+</div>
+
+
+<script src="mines.js"></script>
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-const Roulette = require("./roulette");
+const Roulette = require("../roulette");
 const Bet = require("./bet");
 const Wallet = require("./wallet");
 

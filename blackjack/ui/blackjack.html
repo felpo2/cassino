@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Blackjack</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="blackjack.css"
+    >
+
+</head>
+
+<body>
+
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+
+
+<main class="casino-shell">
+
+
+    <section class="table-card">
+
+
+        <header class="game-header">
+
+            <div>
+
+                <span class="game-tag">
+                    TABLE GAME
+                </span>
+
+                <h1>
+                    Blackjack
+                </h1>
+
+                <p>
+                    Chegue o mais perto possível de 21.
+                </p>
+
+            </div>
+
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                Mesa aberta
+
+            </div>
+
+        </header>
+
+
+        <div class="blackjack-table">
+
+
+            <section class="hand-area dealer-area">
+
+                <div class="hand-title">
+
+                    <span>Dealer</span>
+
+                    <strong
+                        id="dealerValue"
+                    >
+                        ?
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="dealerHand"
+                    class="cards"
+                ></div>
+
+            </section>
+
+
+
+            <div class="table-center">
+
+                <div class="table-logo">
+                    21
+                </div>
+
+                <span>
+                    BLACKJACK PAYS 3 TO 2
+                </span>
+
+                <small>
+                    DEALER STANDS ON 17
+                </small>
+
+            </div>
+
+
+
+            <section class="hand-area player-area">
+
+                <div class="hand-title">
+
+                    <span>Sua mão</span>
+
+                    <strong
+                        id="playerValue"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="playerHand"
+                    class="cards"
+                ></div>
+
+            </section>
+
+
+        </div>
+
+
+        <div
+            id="roundMessage"
+            class="round-message"
+        >
+            Faça sua aposta para começar.
+        </div>
+
+
+    </section>
+
+
+
+    <section class="control-card">
+
+
+        <div class="balance">
+
+            <div>
+
+                <span>
+                    Saldo disponível
+                </span>
+
+                <strong>
+                    R$
+                    <span id="balance">
+                        1000.00
+                    </span>
+                </strong>
+
+            </div>
+
+
+            <div class="wallet-icon">
+                $
+            </div>
+
+        </div>
+
+
+        <div class="section-label">
+            Sua aposta
+        </div>
+
+
+        <div class="amount-control">
+
+            <span>R$</span>
+
+            <input
+                id="betAmount"
+                type="number"
+                value="10"
+                min="1"
+            >
+
+            <button
+                id="halfButton"
+                class="small-action"
+                type="button"
+            >
+                ½
+            </button>
+
+            <button
+                id="doubleButton"
+                class="small-action"
+                type="button"
+            >
+                2×
+            </button>
+
+        </div>
+
+
+        <div class="chips">
+
+            <button
+                type="button"
+                data-value="10"
+            >
+                10
+            </button>
+
+            <button
+                type="button"
+                data-value="25"
+            >
+                25
+            </button>
+
+            <button
+                type="button"
+                data-value="50"
+            >
+                50
+            </button>
+
+            <button
+                type="button"
+                data-value="100"
+            >
+                100
+            </button>
+
+        </div>
+
+
+        <button
+            id="dealButton"
+            class="deal-button"
+            type="button"
+        >
+
+            <span>
+                Distribuir cartas
+            </span>
+
+            <span>→</span>
+
+        </button>
+
+
+        <div class="game-actions">
+
+            <button
+                id="hitButton"
+                class="action-button hit"
+                type="button"
+                disabled
+            >
+                Pedir carta
+            </button>
+
+
+            <button
+                id="standButton"
+                class="action-button stand"
+                type="button"
+                disabled
+            >
+                Parar
+            </button>
+
+        </div>
+
+
+        <div class="rules">
+
+            <div>
+                <span>Blackjack</span>
+                <strong>3:2</strong>
+            </div>
+
+            <div>
+                <span>Vitória</span>
+                <strong>2×</strong>
+            </div>
+
+            <div>
+                <span>Dealer</span>
+                <strong>17+</strong>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<div
+    id="winOverlay"
+    class="win-overlay"
+>
+
+    <div class="win-content">
+
+        <span id="winLabel">
+            VITÓRIA
+        </span>
+
+        <strong id="winTitle">
+            21
+        </strong>
+
+        <small id="winText">
+            Você venceu.
+        </small>
+
+    </div>
+
+</div>
+
+
+<script src="blackjack.js"></script>
+
+</body>
+
+</html>

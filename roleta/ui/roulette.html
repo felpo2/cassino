@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Volta da Sorte
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="roulette.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="ambient ambient-yellow"></div>
+<div class="ambient ambient-green"></div>
+
+
+<main class="senna-casino">
+
+
+    <!-- ===============================
+         ROLETA
+    ================================ -->
+
+    <section class="roulette-panel">
+
+
+        <header class="game-header">
+
+
+            <div>
+
+                <div class="eyebrow">
+
+                    <span class="flag-line"></span>
+
+                    BRAZIL RACING SERIES
+
+                </div>
+
+
+                <h1>
+                    VOLTA
+                    <span>
+                        DA SORTE
+                    </span>
+                </h1>
+
+
+                <p>
+                    Velocidade. Precisão. Um giro de cada vez.
+                </p>
+
+            </div>
+
+
+            <div class="live-status">
+
+                <span
+                    class="live-dot"
+                ></span>
+
+                INTERLAGOS
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ===============================
+             TELEMETRIA
+        ================================ -->
+
+        <div class="telemetry">
+
+            <div class="telemetry-item">
+
+                <span>
+                    GIRO
+                </span>
+
+                <strong id="telemetrySpin">
+                    000
+                </strong>
+
+            </div>
+
+
+            <div class="telemetry-item">
+
+                <span>
+                    VELOCIDADE
+                </span>
+
+                <strong id="telemetrySpeed">
+                    000
+                </strong>
+
+                <small>
+                    KM/H
+                </small>
+
+            </div>
+
+
+            <div class="telemetry-item">
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong id="telemetryStatus">
+                    READY
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===============================
+             ROLETA
+        ================================ -->
+
+        <div class="roulette-stage">
+
+
+            <div class="speed-lines"></div>
+
+
+            <div class="pointer-housing">
+
+                <div class="pointer-line"></div>
+
+                <div class="pointer"></div>
+
+            </div>
+
+
+            <div class="wheel-shadow"></div>
+
+
+            <div
+                id="roulette"
+                class="roulette-wheel"
+            >
+
+
+                <div class="helmet-stripe stripe-green"></div>
+                <div class="helmet-stripe stripe-blue"></div>
+
+
+                <div class="wheel-inner-ring">
+
+                    <div class="wheel-center">
+
+                        <span class="center-top">
+                            BR
+                        </span>
+
+                        <strong>
+                            01
+                        </strong>
+
+                        <span class="center-bottom">
+                            RACING
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ===============================
+             RESULTADO
+        ================================ -->
+
+        <div class="race-footer">
+
+
+            <div>
+
+                <span>
+                    ÚLTIMO SETOR
+                </span>
+
+                <strong
+                    id="lastResult"
+                >
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="lap-progress">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <div class="finish-label">
+
+                <div class="checker"></div>
+
+                FINAL LAP
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ===============================
+         PAINEL
+    ================================ -->
+
+    <section class="bet-panel">
+
+
+        <div class="cockpit-label">
+            PILOT CONTROL
+        </div>
+
+
+        <div class="balance-box">
+
+            <div>
+
+                <span>
+                    CRÉDITOS
+                </span>
+
+                <strong>
+
+                    R$
+
+                    <span id="balance">
+                        1000.00
+                    </span>
+
+                </strong>
+
+            </div>
+
+
+            <div class="br-badge">
+
+                <span></span>
+
+                BR
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section-title">
+            VALOR DA VOLTA
+        </div>
+
+
+        <div class="bet-input">
+
+
+            <span>
+                R$
+            </span>
+
+
+            <input
+                id="betAmount"
+                type="number"
+                value="50"
+                min="1"
+            >
+
+
+            <button
+                id="halfButton"
+                type="button"
+            >
+                ½
+            </button>
+
+
+            <button
+                id="doubleButton"
+                type="button"
+            >
+                2×
+            </button>
+
+
+        </div>
+
+
+
+        <div class="quick-values">
+
+            <button
+                data-value="10"
+            >
+                10
+            </button>
+
+            <button
+                data-value="25"
+            >
+                25
+            </button>
+
+            <button
+                data-value="50"
+            >
+                50
+            </button>
+
+            <button
+                data-value="100"
+            >
+                100
+            </button>
+
+        </div>
+
+
+
+        <div class="section-title">
+            ESCOLHA A LINHA
+        </div>
+
+
+
+        <div class="bet-options">
+
+
+            <button
+                class="bet-option red"
+                data-color="red"
+            >
+
+                <span
+                    class="option-number"
+                >
+                    01
+                </span>
+
+                <div>
+
+                    <strong>
+                        VERMELHO
+                    </strong>
+
+                    <small>
+                        2.00×
+                    </small>
+
+                </div>
+
+            </button>
+
+
+
+            <button
+                class="bet-option black"
+                data-color="black"
+            >
+
+                <span
+                    class="option-number"
+                >
+                    02
+                </span>
+
+                <div>
+
+                    <strong>
+                        PRETO
+                    </strong>
+
+                    <small>
+                        2.00×
+                    </small>
+
+                </div>
+
+            </button>
+
+
+
+            <button
+                class="bet-option white"
+                data-color="white"
+            >
+
+                <span
+                    class="option-number"
+                >
+                    03
+                </span>
+
+                <div>
+
+                    <strong>
+                        BRANCO
+                    </strong>
+
+                    <small>
+                        14.00×
+                    </small>
+
+                </div>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ===============================
+             BOTÃO
+        ================================ -->
+
+        <button
+            id="spinButton"
+            class="race-button"
+            type="button"
+        >
+
+            <div class="race-button-left">
+
+                <small>
+                    START
+                </small>
+
+                <strong
+                    id="spinButtonText"
+                >
+                    GIRAR
+                </strong>
+
+            </div>
+
+
+            <div class="race-arrow">
+                →
+            </div>
+
+
+        </button>
+
+
+
+        <div
+            id="result"
+            class="result"
+        >
+
+            Escolha uma linha e prepare a largada.
+
+        </div>
+
+
+
+        <!-- ===============================
+             INFO
+        ================================ -->
+
+        <div class="race-info">
+
+
+            <div>
+
+                <span>
+                    CIRCUITO
+                </span>
+
+                <strong>
+                    BRA
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    MAX RPM
+                </span>
+
+                <strong>
+                    11K
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    MODO
+                </span>
+
+                <strong>
+                    RACE
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<div
+    id="winOverlay"
+    class="win-overlay"
+>
+
+
+    <div class="win-stripes">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+    <div class="win-content">
+
+        <span>
+            VITÓRIA
+        </span>
+
+        <strong id="winAmount">
+            + R$ 100
+        </strong>
+
+        <small>
+            BANDEIRADA FINAL
+        </small>
+
+    </div>
+
+
+</div>
+
+
+<script src="roulette.js"></script>
+
+
+</body>
+
+</html>

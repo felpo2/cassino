@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Plinko
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="plinko.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div
+    class="background-glow glow-one"
+></div>
+
+
+<div
+    class="background-glow glow-two"
+></div>
+
+
+
+<main
+    class="casino-shell"
+>
+
+
+    <!-- =================================
+         JOGO
+    ================================== -->
+
+    <section
+        class="game-card"
+    >
+
+
+        <header
+            class="game-header"
+        >
+
+
+            <div>
+
+                <span
+                    class="game-tag"
+                >
+                    CASINO GAME
+                </span>
+
+
+                <h1>
+                    Plinko
+                </h1>
+
+
+                <p>
+                    Solte a bola e acompanhe a queda.
+                </p>
+
+            </div>
+
+
+            <div
+                class="status"
+            >
+
+                <span
+                    class="status-dot"
+                ></span>
+
+                Online
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================
+             TABULEIRO
+        ================================== -->
+
+        <div
+            class="plinko-stage"
+        >
+
+
+            <canvas
+                id="plinkoCanvas"
+            ></canvas>
+
+
+            <div
+                id="buckets"
+                class="buckets"
+            ></div>
+
+
+        </div>
+
+
+
+        <div
+            class="history-area"
+        >
+
+            <span>
+                Últimas quedas
+            </span>
+
+
+            <div
+                id="history"
+                class="history"
+            ></div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================
+         CONTROLES
+    ================================== -->
+
+    <section
+        class="control-card"
+    >
+
+
+        <div
+            class="balance"
+        >
+
+
+            <div>
+
+                <span>
+                    Saldo disponível
+                </span>
+
+
+                <strong>
+
+                    R$
+
+                    <span
+                        id="balance"
+                    >
+                        1000.00
+                    </span>
+
+                </strong>
+
+            </div>
+
+
+            <div
+                class="wallet-icon"
+            >
+                $
+            </div>
+
+
+        </div>
+
+
+
+        <div
+            class="section-label"
+        >
+            Valor da aposta
+        </div>
+
+
+
+        <div
+            class="amount-control"
+        >
+
+
+            <span>
+                R$
+            </span>
+
+
+            <input
+                id="betAmount"
+                type="number"
+                value="10"
+                min="1"
+            >
+
+
+            <button
+                id="halfButton"
+                class="small-action"
+            >
+                ½
+            </button>
+
+
+            <button
+                id="doubleButton"
+                class="small-action"
+            >
+                2×
+            </button>
+
+
+        </div>
+
+
+
+        <div
+            class="quick-values"
+        >
+
+
+            <button
+                data-value="10"
+            >
+                R$ 10
+            </button>
+
+
+            <button
+                data-value="25"
+            >
+                R$ 25
+            </button>
+
+
+            <button
+                data-value="50"
+            >
+                R$ 50
+            </button>
+
+
+            <button
+                data-value="100"
+            >
+                R$ 100
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             RISCO
+        ================================== -->
+
+        <div
+            class="section-label"
+        >
+            Risco
+        </div>
+
+
+        <div
+            class="risk-selector"
+        >
+
+
+            <button
+                class="risk-button"
+                data-risk="low"
+            >
+                Baixo
+            </button>
+
+
+            <button
+                class="risk-button selected"
+                data-risk="medium"
+            >
+                Médio
+            </button>
+
+
+            <button
+                class="risk-button"
+                data-risk="high"
+            >
+                Alto
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             BOTÃO
+        ================================== -->
+
+        <button
+            id="dropButton"
+            class="drop-button"
+        >
+
+
+            <span
+                id="dropButtonText"
+            >
+                Soltar bola
+            </span>
+
+
+            <span
+                class="drop-icon"
+            >
+                ↓
+            </span>
+
+
+        </button>
+
+
+
+        <div
+            id="result"
+            class="result-message"
+        >
+
+            Escolha o valor e solte a bola.
+
+        </div>
+
+
+
+        <!-- =================================
+             INFORMAÇÕES
+        ================================== -->
+
+        <div
+            class="info-box"
+        >
+
+
+            <div>
+
+                <span>
+                    Linhas
+                </span>
+
+                <strong>
+                    8
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Maior prêmio
+                </span>
+
+                <strong>
+                    5.3×
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    RTP
+                </span>
+
+                <strong>
+                    97.5%
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =================================
+     WIN OVERLAY
+================================== -->
+
+<div
+    id="winOverlay"
+    class="win-overlay"
+>
+
+
+    <div
+        class="win-content"
+    >
+
+
+        <span>
+            MULTIPLICADOR
+        </span>
+
+
+        <strong
+            id="winMultiplier"
+        >
+            5.3×
+        </strong>
+
+
+        <small
+            id="winAmount"
+        >
+            + R$ 0.00
+        </small>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script
+    src="plinko.js"
+></script>
+
+
+</body>
+
+</html>
